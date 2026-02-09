@@ -1,0 +1,7 @@
+<section>
+  @for (postItem of posts; track postItem.id) {
+    <div class="post-item">
+      <app-post [post]="postItem.post"></app-post>
+    </div>
+  }
+</section>

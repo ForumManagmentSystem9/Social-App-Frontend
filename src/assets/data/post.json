@@ -1,0 +1,144 @@
+{
+  "posts": [
+    {
+      "id": 1,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=1",
+        "name": "Lana Rose",
+        "place": "Dubai",
+        "createdAt": "15 minutes ago",
+        "imageUrl": "https://images.unsplash.com/photo-1506905925346-21bda4d32df4",
+        "description": "Sunset views from the Burj Khalifa never get old! The city lights are absolutely magical tonight. ✨",
+        "tags": ["#dubai", "#burjkhalifa", "#citylights", "#sunset"],
+        "likes": 2417,
+        "comments": 128
+      }
+    },
+    {
+      "id": 2,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=5",
+        "name": "Alex Chen",
+        "place": "Swiss Alps",
+        "createdAt": "2 hours ago",
+        "imageUrl": "https://images.unsplash.com/photo-1519681393784-d120267933ba",
+        "description": "Morning hike in the Alps! The air is so crisp and clean up here. Feeling on top of the world! 🏔️",
+        "tags": ["#swissalps", "#hiking", "#mountains", "#nature"],
+        "likes": 3421,
+        "comments": 89
+      }
+    },
+    {
+      "id": 3,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=8",
+        "name": "Maya Patel",
+        "place": "Tokyo, Japan",
+        "createdAt": "4 hours ago",
+        "imageUrl": "https://images.unsplash.com/photo-1544551763-46a013bb70d5",
+        "description": "Cherry blossom season in full bloom! Shibuya crossing looks even more beautiful with pink petals everywhere. 🌸",
+        "tags": ["#tokyo", "#cherryblossom", "#japan", "#travel"],
+        "likes": 5123,
+        "comments": 247
+      }
+    },
+    {
+      "id": 4,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=11",
+        "name": "Marcus Lee",
+        "place": "New York City",
+        "createdAt": "6 hours ago",
+        "imageUrl": "https://images.unsplash.com/photo-1518837695005-2083093ee35b",
+        "description": "Times Square never sleeps! The energy here is absolutely electric. Broadway show tonight! 🎭",
+        "tags": ["#nyc", "#timessquare", "#broadway", "#citylife"],
+        "likes": 3890,
+        "comments": 156
+      }
+    },
+    {
+      "id": 5,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=15",
+        "name": "Sophia Rossi",
+        "place": "Santorini, Greece",
+        "createdAt": "1 day ago",
+        "imageUrl": "https://images.unsplash.com/photo-1520250497591-112f2f40a3f4",
+        "description": "Greek island dreams come true! The white buildings against the blue sea are picture perfect. 🇬🇷",
+        "tags": ["#santorini", "#greece", "#islandlife", "#travelgram"],
+        "likes": 6721,
+        "comments": 412
+      }
+    },
+    {
+      "id": 6,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=20",
+        "name": "David Kim",
+        "place": "Seoul, South Korea",
+        "createdAt": "1 day ago",
+        "imageUrl": "https://images.unsplash.com/photo-1536152470836-b943b246224c",
+        "description": "Street food adventure in Myeongdong! Tteokbokki and hotteok all day long. 🍢",
+        "tags": ["#seoul", "#koreanfood", "#streetfood", "#myeongdong"],
+        "likes": 2987,
+        "comments": 187
+      }
+    },
+    {
+      "id": 7,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=25",
+        "name": "Isabella Costa",
+        "place": "Rio de Janeiro",
+        "createdAt": "2 days ago",
+        "imageUrl": "https://images.unsplash.com/photo-1516483638261-f4dbaf036963",
+        "description": "Christ the Redeemer view at sunrise! Worth the early wake-up call. 🌅",
+        "tags": ["#riodejaneiro", "#brazil", "#christtheredeemer", "#sunrise"],
+        "likes": 4231,
+        "comments": 231
+      }
+    },
+    {
+      "id": 8,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=30",
+        "name": "Oliver James",
+        "place": "London, UK",
+        "createdAt": "2 days ago",
+        "imageUrl": "https://images.unsplash.com/photo-1523531294919-4bcd7c65e216",
+        "description": "Afternoon tea with a view of Big Ben. Proper British weather today - cloudy with a chance of scones! ☕",
+        "tags": ["#london", "#afternoontea", "#bigben", "#uk"],
+        "likes": 3124,
+        "comments": 124
+      }
+    },
+    {
+      "id": 9,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=35",
+        "name": "Emma Wilson",
+        "place": "Bali, Indonesia",
+        "createdAt": "3 days ago",
+        "imageUrl": "https://images.unsplash.com/photo-1534008897995-27a23e859048",
+        "description": "Yoga at sunrise overlooking the rice terraces. Pure serenity. 🧘‍♀️",
+        "tags": ["#bali", "#yoga", "#ricefields", "#wellness"],
+        "likes": 5234,
+        "comments": 298
+      }
+    },
+    {
+      "id": 10,
+      "post": {
+        "avatar": "https://i.pravatar.cc/150?img=40",
+        "name": "Ryan Taylor",
+        "place": "Sydney, Australia",
+        "createdAt": "3 days ago",
+        "imageUrl": "https://images.unsplash.com/photo-1551632811-561732d1e306",
+        "description": "Opera House from the Harbour Bridge climb! The view is absolutely breathtaking. 🇦🇺",
+        "tags": ["#sydney", "#operahouse", "#harbourbridge", "#australia"],
+        "likes": 4567,
+        "comments": 312
+      }
+    }
+  ]
+}
