@@ -1,27 +1,35 @@
-<mat-card class="bg-card! w-full my-4! rounded-2xl! p-0! overflow-hidden">
-  <article class="flex items-center gap-3 p-4!">
-    <img
-      mat-card-avatar
-      class="w-11 h-11 rounded-full m-0!"
-      [src]="avatar().url"
-      alt="Avatar"
-    />
-    <!-- Input field -->
+<p-card class="bg-card! w-full my-4 rounded-2xl! p-1 overflow-hidden">
+
+  <div class="flex items-center gap-3 p-4">
+
+    <!-- Avatar -->
+    <p-avatar
+      [image]="avatar().url"
+      shape="circle"
+      class="w-10! h-10!"
+    ></p-avatar>
+
+    <!-- Input -->
     <div class="flex-1">
       <input
         type="text"
         placeholder="What's on your mind?"
-        class="w-full p-3 bg-input! rounded-full border-none outline-none text-foreground! hover:bg-gray-200 focus:ring-2 focus:ring-green-300 transition-all"
+        class="w-full p-3 bg-input rounded-full border-none outline-none text-foreground
+               focus:ring-2 focus:ring-green-300 transition-all"
       />
     </div>
 
-    <!-- Post button (or Search icon if you prefer) -->
+    <!-- Send Button -->
     <button
-      class="flex items-center justify-center w-11 h-11 text-foreground! rounded-full"
+      class="flex items-center justify-center w-11 h-11 rounded-full
+         cursor-pointer"
       title="Post"
     >
-      <mat-icon>send</mat-icon>
+      <mat-icon class="text-muted-foreground leading-none!">send</mat-icon>
     </button>
-  </article>
-</mat-card>
 
+
+
+  </div>
+
+</p-card>

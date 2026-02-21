@@ -1,4 +1,6 @@
 @import "tailwindcss";
+@import "primeicons/primeicons.css";
+
 
 @media (prefers-color-scheme: dark) {
   :root {

@@ -1,103 +1,108 @@
-<mat-card class="bg-card! my-4! rounded-2xl! p-0! overflow-hidden">
-  <article class="p-4">
+<p-card class="bg-card! my-4 rounded-2xl! p-1 overflow-hidden">
+
+  <div class="p-4!">
 
     <!-- Header -->
-    <mat-card-header class="flex items-center gap-2 p-0! mb-3!">
-      <img
-        mat-card-avatar
-        class="w-10 h-10 rounded-full m-0!"
-        [src]="post.avatar"
-        alt="Avatar"
-      />
+    <div class="flex items-center gap-2 mb-4">
+
+      <!-- Avatar -->
+      <p-avatar
+        [image]="post.avatar"
+        shape="circle"
+        class="w-10! h-10!"
+      ></p-avatar>
 
       <div class="flex flex-col flex-1">
-        <mat-card-title class="text-base! font-semibold!">
+        <span class="text-base font-semibold text-foreground">
           {{ post.name }}
-        </mat-card-title>
-        <mat-card-subtitle class="text-xs! text-muted-foreground!">
-          {{post.place}} · {{post.createdAt}}
-        </mat-card-subtitle>
+        </span>
+        <span class="text-xs text-muted-foreground">
+          {{ post.place }} · {{ post.createdAt }}
+        </span>
       </div>
 
+      <!-- Menu -->
       <button mat-icon-button class="text-muted-foreground!">
         <mat-icon>more_horiz</mat-icon>
       </button>
-    </mat-card-header>
+
+    </div>
 
     <!-- Image -->
-    <div class="mb-3">
+    <div>
       <img
         class="w-full h-96 object-cover rounded-lg"
         [src]="post.imageUrl"
-        alt="Post1"
+        alt="Post image"
       />
     </div>
 
     <!-- Action Buttons -->
-    <mat-card-actions class="flex justify-between p-0! mb-3!">
-      <div class="flex items-center gap-2">
+    <mat-card-actions class="flex justify-between p-0! my-3!">
+      <div class="flex items-center gap-1">
         <!-- Like -->
         <div class="relative">
           <button mat-icon-button class="p-1">
-            <mat-icon class="text-2xl! text-foreground!">favorite_outline</mat-icon>
+            <mat-icon class="text-2xl! text-muted-foreground!">favorite_outline</mat-icon>
           </button>
         </div>
 
         <!-- Comment -->
         <button mat-icon-button class="p-1">
-          <mat-icon class="text-2xl! text-foreground!">chat_bubble_outline</mat-icon>
+          <mat-icon class="text-2xl! text-muted-foreground!">chat_bubble_outline</mat-icon>
         </button>
 
         <!-- Share -->
         <button mat-icon-button class="p-1">
-          <mat-icon class="text-2xl! text-foreground!">send</mat-icon>
+          <mat-icon class="text-2xl! text-muted-foreground!">send</mat-icon>
         </button>
       </div>
 
       <!-- Bookmark -->
       <button mat-icon-button class="p-1">
-        <mat-icon class="text-2xl! text-foreground!">bookmark_outline</mat-icon>
+        <mat-icon class="text-2xl! text-muted-foreground!">bookmark_outline</mat-icon>
       </button>
     </mat-card-actions>
 
-    <!-- Likes Section -->
+    <!-- Likes -->
     <div class="flex items-center gap-2 mb-3">
       <div class="flex -space-x-2">
         <img class="w-6 h-6 rounded-full border-2 border-card"
-             src="https://i.pravatar.cc/100?img=1"
-             alt="User 1">
+             src="https://i.pravatar.cc/100?img=1" />
         <img class="w-6 h-6 rounded-full border-2 border-card"
-             src="https://i.pravatar.cc/100?img=2"
-             alt="User 2">
+             src="https://i.pravatar.cc/100?img=2" />
         <img class="w-6 h-6 rounded-full border-2 border-card"
-             src="https://i.pravatar.cc/100?img=3"
-             alt="User 3">
+             src="https://i.pravatar.cc/100?img=3" />
       </div>
-      <span class="text-sm text-muted-foreground!">
-        Liked by <span class="font-semibold text-foreground!">{{post.name}}</span>
-        and <span class="font-semibold text-foreground!">others</span>
+
+      <span class="text-sm text-muted-foreground">
+        Liked by <span class="font-semibold text-foreground">{{ post.name }}</span>
+        and <span class="font-semibold text-foreground">others</span>
       </span>
     </div>
 
     <!-- Caption -->
-    <mat-card-content class="p-0! mb-3!">
-      <p class="text-sm text-foreground!">
-        <span class="font-semibold">{{post.name}}</span>
-        {{post.description}}
+    <div class="mb-3">
+      <p class="text-sm text-foreground">
+        <span class="font-semibold">{{ post.name }}</span>
+        {{ post.description }}
       </p>
+
       <div class="flex gap-2 mt-2">
-        @for (tag of post.tags; track tag){
-          <span class="text-xs text-primary! font-medium">{{tag}}</span>
+        @for (tag of post.tags; track tag) {
+          <span class="text-xs text-primary font-medium">#{{ tag }}</span>
         }
       </div>
-    </mat-card-content>
+    </div>
 
     <!-- Comments -->
-    <mat-card-footer class="p-0!">
-      <button class="text-sm text-muted-foreground! hover:text-foreground! transition-colors">
-        View all {{post.comments}} comments
-      </button>
-    </mat-card-footer>
+    <button
+      pButton
+      type="button"
+      class="p-button-text text-sm text-muted-foreground hover:text-foreground p-0"
+      label="View all {{ post.comments }} comments"
+    ></button>
 
-  </article>
-</mat-card>
+  </div>
+
+</p-card>

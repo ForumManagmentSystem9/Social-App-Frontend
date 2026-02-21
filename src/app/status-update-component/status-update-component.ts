@@ -1,6 +1,10 @@
 import {Component, Input, signal} from '@angular/core';
 import {MatCard, MatCardAvatar} from '@angular/material/card';
 import {MatIcon} from '@angular/material/icon';
+import {Card} from 'primeng/card';
+import {Avatar} from 'primeng/avatar';
+import {ButtonDirective} from 'primeng/button';
+import {MatIconButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-status-update-component',
@@ -8,7 +12,11 @@ import {MatIcon} from '@angular/material/icon';
   imports: [
     MatCard,
     MatCardAvatar,
-    MatIcon
+    MatIcon,
+    Card,
+    Avatar,
+    ButtonDirective,
+    MatIconButton
   ],
   templateUrl: './status-update-component.html',
 })
