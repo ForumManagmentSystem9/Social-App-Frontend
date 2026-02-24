@@ -1,104 +1,128 @@
-<!-- MOBILE BACKDROP (starts below main nav) -->
-@if (sidebar.sidebarVisible) {
-  <div
-    class="fixed left-0 right-0 bottom-0 bg-black/50 z-40 lg:hidden transition-opacity top-16"
-    (click)="sidebar.sidebarVisible = false"
-  ></div>
-}
+<mat-sidenav-container class="bg-black! min-h-screen!">
 
-<!-- SIDEBAR (starts below main nav) -->
-<aside
-  class="fixed left-0 bottom-0 h-[calc(100vh-4rem)] z-50
-         bg-black w-xs
-         transform transition-transform duration-300
-         lg:translate-x-0 flex flex-col top-16 py-4!"
-  [ngClass]="{
-    '-translate-x-full': !sidebar.sidebarVisible,
-    'translate-x-0': sidebar.sidebarVisible
-  }"
->
+  <!-- FIXED SIDEBAR -->
+  <mat-sidenav
+    #drawer
+    [mode]="sidebar.screenIsMobile ? 'over' : 'side'"
+    [opened]="sidebar.screenIsMobile ? sidebarVisible : true"
+    class="bg-black! fixed! left-0! top-16! pt-2!
+         w-full! md:w-20! lg:w-72! rounded-0!
+         h-[calc(100vh-4rem)]!
+         flex! flex-col! overflow-hidden! z-50!"
+  >
 
-  <!-- NAVIGATION -->
-  <nav class="flex-1 overflow-y-auto py-2 px-3 space-y-1">
 
-    @for (item of navItems; track item.id) {
-      <button
-        (click)="activeNav = item.id"
-        class="relative w-full flex items-center gap-3 px-4 py-3 rounded-2xl
-               border-none shadow-none transition-all duration-200 group overflow-hidden"
-        [ngClass]="activeNav === item.id
-          ? 'bg-linear-to-r from-cyan-500/20 to-purple-500/20 text-white'
-          : 'bg-transparent text-zinc-400 hover:bg-zinc-900 hover:text-white'"
-      >
 
-        <!-- ACTIVE INDICATOR -->
-        <div
-          class="absolute left-0 top-0 h-full w-1 rounded-full transition-all duration-300"
-          [ngClass]="{
-            'bg-gradient-to-b from-cyan-400 to-purple-500': activeNav === item.id,
-            'bg-transparent group-hover:bg-zinc-700/40': activeNav !== item.id
-          }"
-        ></div>
+    <!-- NAVIGATION (FIXED TO FILL SPACE) -->
+    <nav class="flex-grow overflow-y-auto px-3 space-y-1 w-full">
+      @for (item of navItems; track item.id) {
+        <a
+          [routerLink]="['/', item.id]"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{ exact: true }"
+          class="relative w-full flex items-center gap-3 px-4 py-3 rounded-2xl
+                 text-zinc-400 hover:bg-zinc-900 hover:text-white
+                 transition-all duration-200 group overflow-hidden"
+        >
+          <!-- LEFT ACTIVE BAR -->
+          <div
+            class="absolute left-0 top-0 h-full w-1 rounded-full transition-all duration-300
+                   group-[.active]:bg-gradient-to-b group-[.active]:from-cyan-400 group-[.active]:to-purple-500
+                   group-hover:bg-zinc-700/40"
+          ></div>
 
-        <!-- ICON -->
-        <span class="text-xl relative z-10">
-          <i [class]="item.icon"></i>
-        </span>
+          <!-- ICON -->
+          <span class="text-xl relative z-10">
+            <i [class]="item.icon"></i>
+          </span>
 
-        <!-- LABEL + BADGE -->
-        @if (isExpanded) {
-          <span class="font-bold text-base relative z-10">
+          <!-- LABEL -->
+          <span class="font-bold text-base relative z-10 block md:hidden lg:block">
             {{ item.label }}
           </span>
 
+          <!-- BADGE -->
           @if (item.badge) {
             <span
-              class="ml-auto bg-red-600 text-white text-xs font-bold px-2 py-0.5 rounded-full"
+              class="absolute
+                     right-3 top-1
+                     md:right-1 md:top-1.5
+                     bg-red-600 text-white text-xs font-bold
+                     px-2 py-0.5 md:px-1 md:py-0
+                     rounded-full
+                     block"
             >
               {{ item.badge }}
             </span>
           }
-        }
+        </a>
+      }
+    </nav>
 
-      </button>
-    }
-
-  </nav>
-
-  <!-- CREATE POST -->
-  @if (isExpanded) {
-    <div class="w-full px-3 mx-auto">
+    <!-- CREATE POST BUTTON -->
+    <div class="w-full! px-3! mx-auto! block md:hidden lg:block">
       <button
-        class="w-full my-3 p-3 rounded-2xl border-none
-             font-black text-lg text-white
-             bg-linear-to-r from-cyan-500 via-blue-500 to-purple-600
-             hover:scale-105 active:scale-95 transition-all duration-200"
+        class="w-full! my-3! p-3! rounded-2xl! border-none!
+               font-black! text-lg! text-white!
+               bg-linear-to-r from-cyan-500 via-blue-500 to-purple-600!
+               hover:scale-105! active:scale-95! transition-all! duration-200!"
       >
         Create Post
       </button>
     </div>
-  }
 
-  <!-- FOOTER -->
-  <div class="border-t border-zinc-800 p-3 mt-auto">
-    <button
-      class="w-full flex items-center gap-3 px-3 py-3 rounded-2xl
-             hover:bg-zinc-900 transition-all duration-200"
-    >
-      <div
-        class="w-10 h-10 rounded-full flex items-center justify-center
-               bg-gradient-to-br from-pink-500 to-orange-500 text-white font-bold"
+    <!-- PROFILE SECTION (NOW ALWAYS AT BOTTOM) -->
+    <div class="border-t border-zinc-800 p-3 shrink-0 ">
+      <button
+        class="w-full flex items-center gap-3 p-3 rounded-2xl
+               hover:bg-zinc-900 transition-all duration-200
+               cursor-pointer"
+        matTooltip="Profile"
+        matTooltipPosition="right"
+        [matTooltipDisabled]="sidebar.screenIsMobile"
       >
-        JD
-      </div>
 
-      @if (isExpanded) {
-        <div class="flex-1 text-left">
+        <!-- AVATAR + BADGE -->
+        <div class="relative flex items-center justify-center">
+          <div
+            class="w-10 h-10 rounded-full flex items-center justify-center
+                   bg-gradient-to-br from-pink-500 to-orange-500 text-white font-bold"
+          >
+            JD
+          </div>
+
+          <!-- BADGE ON MD ONLY -->
+          <span
+            class="hidden md:flex lg:hidden absolute -top-1 -right-1
+                   bg-red-600 text-white text-xs font-bold
+                   w-5 h-5 rounded-full items-center justify-center"
+          >
+            4
+          </span>
+        </div>
+
+        <!-- PROFILE TEXT -->
+        <div class="flex-1 text-left block md:hidden lg:block">
           <div class="font-bold text-sm text-white">John Doe</div>
           <div class="text-xs text-zinc-500">@johndoe</div>
         </div>
-      }
-    </button>
-  </div>
 
-</aside>
+      </button>
+    </div>
+
+  </mat-sidenav>
+
+  <!-- MAIN CONTENT -->
+  <mat-sidenav-content class="pt-20 mx-auto! bg-background!">
+
+    <article class="max-w-xl! w-full! mx-auto! px-4!">
+
+      <app-story-component></app-story-component>
+      <app-status-update-component></app-status-update-component>
+      <app-post-component-list></app-post-component-list>
+
+    </article>
+
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
